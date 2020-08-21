@@ -4,6 +4,8 @@ const connectDB = require('./config/db')
 dotenv.config({ path: './config/config.env' })
 const app = express()
 connectDB()
+app.use(express.json());
+// app.use(express.urlencoded(true));
 const todolist = require('./routes/todo')
 app.use('/todolist', todolist)
 
